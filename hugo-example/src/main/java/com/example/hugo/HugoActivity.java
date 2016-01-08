@@ -14,15 +14,10 @@ public class HugoActivity extends Activity {
     tv.setText("Check logcat!");
     setContentView(tv);
 
-    printArgs("The", "Quick", "Brown", "Fox");
-
-    Log.i("Fibonacci", "fibonacci's 4th number is " + fibonacci(4));
 
     Greeter greeter = new Greeter("Jake");
-    Log.d("Greeting", greeter.sayHello());
 
     Charmer charmer = new Charmer("Jake");
-    Log.d("Charming", charmer.askHowAreYou());
 
     startSleepyThread();
   }

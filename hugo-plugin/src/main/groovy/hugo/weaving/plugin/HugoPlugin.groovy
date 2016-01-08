@@ -26,22 +26,24 @@ class HugoPlugin implements Plugin<Project> {
     }
 
     project.dependencies {
-      debugCompile 'com.jakewharton.hugo:hugo-runtime:1.2.2-SNAPSHOT'
+      debugCompile 'com.jakewharton.hugo:hugo-runtime:1.2.2.1-SNAPSHOT'
       // TODO this should come transitively
       debugCompile 'org.aspectj:aspectjrt:1.8.6'
-      compile 'com.jakewharton.hugo:hugo-annotations:1.2.2-SNAPSHOT'
+      compile 'com.jakewharton.hugo:hugo-annotations:1.2.2.1-SNAPSHOT'
     }
 
     project.extensions.create('hugo', HugoExtension)
 
     variants.all { variant ->
-      if (!variant.buildType.isDebuggable()) {
-        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
-        return;
-      } else if (!project.hugo.enabled) {
-        log.debug("Hugo is not disabled.")
-        return;
-      }
+//      if (!variant.buildType.isDebuggable()) {
+//        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
+//        return;
+//      } else
+//      if (!project.hugo.enabled) {
+//        log.debug("Hugo is not disabled.")
+//        return;
+//      }
+//        log.debug("Hugo is enabled.")
 
       JavaCompile javaCompile = variant.javaCompile
       javaCompile.doLast {

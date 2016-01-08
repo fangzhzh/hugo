@@ -41,3 +41,7 @@ modifyPom {
     }
   }
 }
+nexus {
+    repositoryUrl = RELEASE_REPOSITORY_URL
+    snapshotRepositoryUrl = SNAPSHOT_REPOSITORY_URL
+}
